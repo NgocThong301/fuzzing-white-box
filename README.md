@@ -31,8 +31,8 @@ docker compose logs -f backend
 
 ## 📋 Project Overview
 
-**Project Name:** Textbook Marketplace (SachGiaRe.vn)  
-**Project Type:** C2C (Consumer-to-Consumer) E-commerce Platform  
+**Project Name:** Textbook Marketplace (SachGiaRe.vn)
+**Project Type:** C2C (Consumer-to-Consumer) E-commerce Platform
 **Target Users:** University/College students
 
 ### ✅ Implemented Features
@@ -58,6 +58,7 @@ docker compose logs -f backend
 ## 🛠 Tech Stack
 
 ### Frontend
+
 | Technology | Purpose |
 |------------|---------|
 | React 18 | UI library |
@@ -68,6 +69,7 @@ docker compose logs -f backend
 | Tailwind CSS | Styling |
 
 ### Backend
+
 | Technology | Purpose |
 |------------|---------|
 | NestJS | Backend framework |
@@ -79,6 +81,7 @@ docker compose logs -f backend
 | Swagger/OpenAPI | API documentation |
 
 ### Infrastructure
+
 | Technology | Purpose |
 |------------|---------|
 | Docker Compose | Container orchestration |
@@ -105,33 +108,33 @@ TMDT/
 │   │   ├── escrow/            # Escrow system
 │   │   ├── reviews/           # Reviews & ratings
 │   │   ├── favorites/         # Favorites
-│   │   ├── notifications/     # Notifications
+│   │   ├── notifications/      # Notifications
 │   │   ├── reports/           # Reports & disputes
-│   │   ├── admin/            # Admin dashboard
-│   │   ├── moderation/        # Content moderation
-│   │   ├── seo/              # SEO module
-│   │   └── common/           # Shared utilities
+│   │   ├── admin/             # Admin dashboard
+│   │   ├── moderation/         # Content moderation
+│   │   ├── seo/               # SEO module
+│   │   └── common/            # Shared utilities
 │   ├── prisma/
-│   │   ├── schema.prisma     # Database schema
-│   │   └── seed.ts           # Database seeder
+│   │   ├── schema.prisma      # Database schema
+│   │   └── seed.ts            # Database seeder
 │   └── Dockerfile
 ├── frontend/                   # React application
 │   ├── src/
-│   │   ├── components/        # Reusable components
-│   │   ├── pages/            # Page components
-│   │   ├── hooks/            # Custom React hooks
-│   │   ├── lib/              # API client & utilities
-│   │   └── types/            # TypeScript types
+│   │   ├── components/         # Reusable components
+│   │   ├── pages/             # Page components
+│   │   ├── hooks/             # Custom React hooks
+│   │   ├── lib/               # API client & utilities
+│   │   └── types/             # TypeScript types
 │   ├── Dockerfile
 │   └── nginx.conf
 ├── docs/
-│   ├── deployment.md          # Deployment guide
+│   ├── deployment.md           # Deployment guide
 │   ├── testing/
-│   │   └── test-cases.md    # Test cases (55 tests)
-│   └── legal-compliance.md   # Legal compliance
-├── docker-compose.yml         # Docker orchestration
-├── .env.example              # Environment template
-├── start.sh                  # Quick start script
+│   │   └── test-cases.md      # Test cases (55 tests)
+│   └── legal-compliance.md    # Legal compliance
+├── docker-compose.yml          # Docker orchestration
+├── .env.example                # Environment template
+├── start.sh                   # Quick start script
 └── README.md
 ```
 
