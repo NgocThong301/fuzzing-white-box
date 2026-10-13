@@ -1,0 +1,31 @@
+# robots.txt - Textbook Marketplace
+
+User-agent: *
+Allow: /
+
+# Disallow API endpoints
+Disallow: /api/auth/
+Disallow: /api/wallet/
+Disallow: /api/cart/
+Disallow: /api/orders/*/cancel
+Disallow: /api/payments/
+Disallow: /api/favorites/
+Disallow: /api/notifications/
+
+# Disallow admin endpoints
+Disallow: /api/admin/
+
+# Disallow checkout flow
+Disallow: /checkout
+Disallow: /cart
+Disallow: /payment/
+
+# Allow authenticated user pages (crawlers won't access anyway)
+Allow: /orders
+Allow: /wallet
+
+# Sitemap
+Sitemap: https://www.sachgiare.vn/api/sitemap/xml
+
+# Crawl delay (optional)
+Crawl-delay: 1

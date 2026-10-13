@@ -1,0 +1,216 @@
+{
+  "target": {
+    "file": "backend/src/modules/listing/services/listing.service.ts",
+    "class": "ListingService",
+    "method": "findAll(query: SearchListingDto, userId?: number, userRoles?: string[])"
+  },
+  "totalCases": 545,
+  "passed": 535,
+  "failed": 0,
+  "exceptions": 9,
+  "timeouts": 0,
+  "validationFails": 0,
+  "skipped": 1,
+  "uniqueFailures": 3,
+  "coverage": {
+    "instrumented": false,
+    "statements": 0,
+    "branches": 0,
+    "functions": 0,
+    "lines": 0
+  },
+  "failures": [
+    {
+      "id": "type_confusion_q_3",
+      "input": {
+        "q": -1
+      },
+      "inputLength": 8,
+      "category": "type_confusion",
+      "status": "EXCEPTION",
+      "errorType": "PrismaValidationError",
+      "errorMessage": "\nInvalid `this.prisma.listing.count()` invocation in\n/Users/daongocthong/TMDT/backend/src/modules/listing/services/listing.service.ts:202:27\n\n  199     },\n  200   },\n  201 }),\n→ 202 this.prisma.listing.count({\n        select: {\n          _count: {\n            select: {\n              _all: true\n            }\n          }\n        },\n        where: {\n          deletedAt: null,\n          status: \"APPROVED\",\n          OR: [\n            {\n              book: {\n                title: {\n                  contains: -1,\n                  mode: \"insensitive\"\n                }\n              }\n            },\n            {\n              book: {\n                author: {\n                  contains: -1,\n                  mode: \"insensitive\"\n                }\n              }\n            },\n            {\n              book: {\n                isbn: {\n                  contains: -1,\n                  mode: \"insensitive\"\n                }\n              }\n            },\n            {\n              description: {\n                contains: -1,\n                mode: \"insensitive\"\n              }\n            }\n          ]\n        }\n      })\n\nArgument `contains`: Invalid value provided. Expected String or StringFieldRefInput, provided Int.",
+      "stackTrace": "PrismaClientValidationError: \nInvalid `this.prisma.listing.count()` invocation in\n/Users/daongocthong/TMDT/backend/src/modules/listing/services/listing.service.ts:202:27\n\n  199     },",
+      "executionTime": 9
+    },
+    {
+      "id": "type_confusion_q_4",
+      "input": {
+        "q": 1
+      },
+      "inputLength": 7,
+      "category": "type_confusion",
+      "status": "EXCEPTION",
+      "errorType": "PrismaValidationError",
+      "errorMessage": "\nInvalid `this.prisma.listing.findMany()` invocation in\n/Users/daongocthong/TMDT/backend/src/modules/listing/services/listing.service.ts:178:27\n\n  175 const actualSortBy = validSortFields.includes(sortBy) ? sortBy : 'createdAt';\n  176 \n  177 const [data, total] = await Promise.all([\n→ 178   this.prisma.listing.findMany({\n          where: {\n            deletedAt: null,\n            status: \"APPROVED\",\n            OR: [\n              {\n                book: {\n                  title: {\n                    contains: 1,\n                    mode: \"insensitive\"\n                  }\n                }\n              },\n              {\n                book: {\n                  author: {\n                    contains: 1,\n                    mode: \"insensitive\"\n                  }\n                }\n              },\n              {\n                book: {\n                  isbn: {\n                    contains: 1,\n                    mode: \"insensitive\"\n                  }\n                }\n              },\n              {\n                description: {\n                  contains: 1,\n                  mode: \"insensitive\"\n                }\n              }\n            ]\n          },\n          skip: 0,\n          take: 20,\n          orderBy: {\n            createdAt: \"desc\"\n          },\n          include: {\n            book: {\n              include: {\n                major: {\n                  include: {\n                    university: true\n                  }\n                },\n                category: true\n              }\n            },\n            seller: {\n              select: {\n                id: true,\n                fullName: true\n              }\n            },\n            images: {\n              where: {\n                isPrimary: true\n              },\n              take: 1\n            },\n            _count: {\n              select: {\n                favorites: true\n              }\n            }\n          }\n        })\n\nArgument `contains`: Invalid value provided. Expected String or StringFieldRefInput, provided Int.",
+      "stackTrace": "PrismaClientValidationError: \nInvalid `this.prisma.listing.findMany()` invocation in\n/Users/daongocthong/TMDT/backend/src/modules/listing/services/listing.service.ts:178:27\n\n  175 const actualSortBy = validSortFields.includes(sortBy) ? sortBy : 'createdAt';",
+      "executionTime": 1
+    },
+    {
+      "id": "type_confusion_q_5",
+      "input": {
+        "q": true
+      },
+      "inputLength": 10,
+      "category": "type_confusion",
+      "status": "EXCEPTION",
+      "errorType": "PrismaValidationError",
+      "errorMessage": "\nInvalid `this.prisma.listing.count()` invocation in\n/Users/daongocthong/TMDT/backend/src/modules/listing/services/listing.service.ts:202:27\n\n  199     },\n  200   },\n  201 }),\n→ 202 this.prisma.listing.count({\n        select: {\n          _count: {\n            select: {\n              _all: true\n            }\n          }\n        },\n        where: {\n          deletedAt: null,\n          status: \"APPROVED\",\n          OR: [\n            {\n              book: {\n                title: {\n                  contains: true,\n                  mode: \"insensitive\"\n                }\n              }\n            },\n            {\n              book: {\n                author: {\n                  contains: true,\n                  mode: \"insensitive\"\n                }\n              }\n            },\n            {\n              book: {\n                isbn: {\n                  contains: true,\n                  mode: \"insensitive\"\n                }\n              }\n            },\n            {\n              description: {\n                contains: true,\n                mode: \"insensitive\"\n              }\n            }\n          ]\n        }\n      })\n\nArgument `contains`: Invalid value provided. Expected String or StringFieldRefInput, provided Boolean.",
+      "stackTrace": "PrismaClientValidationError: \nInvalid `this.prisma.listing.count()` invocation in\n/Users/daongocthong/TMDT/backend/src/modules/listing/services/listing.service.ts:202:27\n\n  199     },",
+      "executionTime": 1
+    },
+    {
+      "id": "type_confusion_q_8",
+      "input": {
+        "q": null
+      },
+      "inputLength": 10,
+      "category": "type_confusion",
+      "status": "EXCEPTION",
+      "errorType": "PrismaValidationError",
+      "errorMessage": "\nInvalid `this.prisma.listing.count()` invocation in\n/Users/daongocthong/TMDT/backend/src/modules/listing/services/listing.service.ts:202:27\n\n  199     },\n  200   },\n  201 }),\n→ 202 this.prisma.listing.count({\n        select: {\n          _count: {\n            select: {\n              _all: true\n            }\n          }\n        },\n        where: {\n          deletedAt: null,\n          status: \"APPROVED\",\n          OR: [\n            {\n              book: {\n                title: {\n                  contains: Infinity,\n                  mode: \"insensitive\"\n                }\n              }\n            },\n            {\n              book: {\n                author: {\n                  contains: Infinity,\n                  mode: \"insensitive\"\n                }\n              }\n            },\n            {\n              book: {\n                isbn: {\n                  contains: Infinity,\n                  mode: \"insensitive\"\n                }\n              }\n            },\n            {\n              description: {\n                contains: Infinity,\n                mode: \"insensitive\"\n              }\n            }\n          ]\n        }\n      })\n\nArgument `contains` is missing.",
+      "stackTrace": "PrismaClientValidationError: \nInvalid `this.prisma.listing.count()` invocation in\n/Users/daongocthong/TMDT/backend/src/modules/listing/services/listing.service.ts:202:27\n\n  199     },",
+      "executionTime": 1
+    },
+    {
+      "id": "type_confusion_q_9",
+      "input": {
+        "q": null
+      },
+      "inputLength": 10,
+      "category": "type_confusion",
+      "status": "EXCEPTION",
+      "errorType": "PrismaValidationError",
+      "errorMessage": "\nInvalid `this.prisma.listing.count()` invocation in\n/Users/daongocthong/TMDT/backend/src/modules/listing/services/listing.service.ts:202:27\n\n  199     },\n  200   },\n  201 }),\n→ 202 this.prisma.listing.count({\n        select: {\n          _count: {\n            select: {\n              _all: true\n            }\n          }\n        },\n        where: {\n          deletedAt: null,\n          status: \"APPROVED\",\n          OR: [\n            {\n              book: {\n                title: {\n                  contains: -Infinity,\n                  mode: \"insensitive\"\n                }\n              }\n            },\n            {\n              book: {\n                author: {\n                  contains: -Infinity,\n                  mode: \"insensitive\"\n                }\n              }\n            },\n            {\n              book: {\n                isbn: {\n                  contains: -Infinity,\n                  mode: \"insensitive\"\n                }\n              }\n            },\n            {\n              description: {\n                contains: -Infinity,\n                mode: \"insensitive\"\n              }\n            }\n          ]\n        }\n      })\n\nArgument `contains` is missing.",
+      "stackTrace": "PrismaClientValidationError: \nInvalid `this.prisma.listing.count()` invocation in\n/Users/daongocthong/TMDT/backend/src/modules/listing/services/listing.service.ts:202:27\n\n  199     },",
+      "executionTime": 1
+    },
+    {
+      "id": "boundary_{\"page\":0}",
+      "input": {
+        "page": 0
+      },
+      "inputLength": 10,
+      "category": "boundary",
+      "status": "EXCEPTION",
+      "errorType": "PrismaClientUnknownRequestError",
+      "errorMessage": "\nInvalid `this.prisma.listing.findMany()` invocation in\n/Users/daongocthong/TMDT/backend/src/modules/listing/services/listing.service.ts:178:27\n\n  175 const actualSortBy = validSortFields.includes(sortBy) ? sortBy : 'createdAt';\n  176 \n  177 const [data, total] = await Promise.all([\n→ 178   this.prisma.listing.findMany(\nError in query graph construction: AssertionError(\"Invalid value for skip argument: Value can only be positive, found: -20\")",
+      "stackTrace": "PrismaClientUnknownRequestError: \nInvalid `this.prisma.listing.findMany()` invocation in\n/Users/daongocthong/TMDT/backend/src/modules/listing/services/listing.service.ts:178:27\n\n  175 const actualSortBy = validSortFields.includes(sortBy) ? sortBy : 'createdAt';",
+      "executionTime": 1
+    },
+    {
+      "id": "boundary_{\"page\":-1}",
+      "input": {
+        "page": -1
+      },
+      "inputLength": 11,
+      "category": "boundary",
+      "status": "EXCEPTION",
+      "errorType": "PrismaClientUnknownRequestError",
+      "errorMessage": "\nInvalid `this.prisma.listing.findMany()` invocation in\n/Users/daongocthong/TMDT/backend/src/modules/listing/services/listing.service.ts:178:27\n\n  175 const actualSortBy = validSortFields.includes(sortBy) ? sortBy : 'createdAt';\n  176 \n  177 const [data, total] = await Promise.all([\n→ 178   this.prisma.listing.findMany(\nError in query graph construction: AssertionError(\"Invalid value for skip argument: Value can only be positive, found: -40\")",
+      "stackTrace": "PrismaClientUnknownRequestError: \nInvalid `this.prisma.listing.findMany()` invocation in\n/Users/daongocthong/TMDT/backend/src/modules/listing/services/listing.service.ts:178:27\n\n  175 const actualSortBy = validSortFields.includes(sortBy) ? sortBy : 'createdAt';",
+      "executionTime": 1
+    },
+    {
+      "id": "boundary_0",
+      "input": {
+        "page": 0
+      },
+      "inputLength": 10,
+      "category": "boundary",
+      "status": "EXCEPTION",
+      "errorType": "PrismaClientUnknownRequestError",
+      "errorMessage": "\nInvalid `this.prisma.listing.findMany()` invocation in\n/Users/daongocthong/TMDT/backend/src/modules/listing/services/listing.service.ts:178:27\n\n  175 const actualSortBy = validSortFields.includes(sortBy) ? sortBy : 'createdAt';\n  176 \n  177 const [data, total] = await Promise.all([\n→ 178   this.prisma.listing.findMany(\nError in query graph construction: AssertionError(\"Invalid value for skip argument: Value can only be positive, found: -20\")",
+      "stackTrace": "PrismaClientUnknownRequestError: \nInvalid `this.prisma.listing.findMany()` invocation in\n/Users/daongocthong/TMDT/backend/src/modules/listing/services/listing.service.ts:178:27\n\n  175 const actualSortBy = validSortFields.includes(sortBy) ? sortBy : 'createdAt';",
+      "executionTime": 1
+    },
+    {
+      "id": "boundary_1",
+      "input": {
+        "page": -1
+      },
+      "inputLength": 11,
+      "category": "boundary",
+      "status": "EXCEPTION",
+      "errorType": "PrismaClientUnknownRequestError",
+      "errorMessage": "\nInvalid `this.prisma.listing.findMany()` invocation in\n/Users/daongocthong/TMDT/backend/src/modules/listing/services/listing.service.ts:178:27\n\n  175 const actualSortBy = validSortFields.includes(sortBy) ? sortBy : 'createdAt';\n  176 \n  177 const [data, total] = await Promise.all([\n→ 178   this.prisma.listing.findMany(\nError in query graph construction: AssertionError(\"Invalid value for skip argument: Value can only be positive, found: -40\")",
+      "stackTrace": "PrismaClientUnknownRequestError: \nInvalid `this.prisma.listing.findMany()` invocation in\n/Users/daongocthong/TMDT/backend/src/modules/listing/services/listing.service.ts:178:27\n\n  175 const actualSortBy = validSortFields.includes(sortBy) ? sortBy : 'createdAt';",
+      "executionTime": 1
+    }
+  ],
+  "categoryStats": {
+    "normal": {
+      "total": 317,
+      "passed": 317,
+      "failed": 0,
+      "exceptions": 0,
+      "skipped": 0
+    },
+    "empty": {
+      "total": 7,
+      "passed": 7,
+      "failed": 0,
+      "exceptions": 0,
+      "skipped": 0
+    },
+    "very_long": {
+      "total": 20,
+      "passed": 19,
+      "failed": 0,
+      "exceptions": 0,
+      "skipped": 1
+    },
+    "special_chars": {
+      "total": 61,
+      "passed": 61,
+      "failed": 0,
+      "exceptions": 0,
+      "skipped": 0
+    },
+    "unicode": {
+      "total": 33,
+      "passed": 33,
+      "failed": 0,
+      "exceptions": 0,
+      "skipped": 0
+    },
+    "sql_injection": {
+      "total": 16,
+      "passed": 16,
+      "failed": 0,
+      "exceptions": 0,
+      "skipped": 0
+    },
+    "xss": {
+      "total": 13,
+      "passed": 13,
+      "failed": 0,
+      "exceptions": 0,
+      "skipped": 0
+    },
+    "path_traversal": {
+      "total": 9,
+      "passed": 9,
+      "failed": 0,
+      "exceptions": 0,
+      "skipped": 0
+    },
+    "type_confusion": {
+      "total": 13,
+      "passed": 8,
+      "failed": 0,
+      "exceptions": 5,
+      "skipped": 0
+    },
+    "boundary": {
+      "total": 56,
+      "passed": 52,
+      "failed": 0,
+      "exceptions": 4,
+      "skipped": 0
+    }
+  },
+  "timestamp": "2026-09-25T07:47:51.647Z",
+  "duration": 1335,
+  "seed": 12345
+}
